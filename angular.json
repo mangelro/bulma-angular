@@ -31,7 +31,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              {
+                "input": "src/styles.scss", 
+                "inject": true, 
+                "bundleName": "framework-style.min"
+              }
             ],
             "scripts": []
           },
@@ -43,7 +47,14 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": 
+              {
+                  "styles": {
+                    "minify":true,
+                    "inlineCritical": true
+                  }
+
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
